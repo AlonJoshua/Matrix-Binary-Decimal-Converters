@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Output from './Components/Output';
+import NumberInput from './Components/NumberInput';
 import './App.css';
 
 class App extends Component {
@@ -10,9 +12,9 @@ class App extends Component {
   }
 
   bin2Dec = (bin) => {
-  let decimal=0;
+  let decimal= 0;
   for (var index=bin.length-1; index >=0; index--) {
-    decimal += parseInt(bin[index])*Math.pow(2, bin.length-1-index);
+    decimal += bin[index]*Math.pow(2, bin.length-1-index);
   }
   return decimal;
 }
@@ -20,7 +22,10 @@ class App extends Component {
   render() {
     return (
       <fragment>
-      <h1>Hello World</h1>
+      <h1>Binary to Decimal convertor</h1>
+      <NumberInput bin={this.bin} />
+      <button>Submit</button>
+      <Output/>
       </fragment>
       );
   }
