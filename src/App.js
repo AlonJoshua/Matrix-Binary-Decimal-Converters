@@ -7,25 +7,32 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      decimal: 0
+      decimal: 0,
+      inputString: ''
     }
   }
 
-  bin2Dec = (bin) => {
-  let decimal= 0;
-  for (var index=bin.length-1; index >=0; index--) {
-    decimal += bin[index]*Math.pow(2, bin.length-1-index);
+  onInputChange = (event) => {
+    console.log(event.target.value)
+    // this.setState({ inputString : event.target.value })
   }
-  return decimal;
-}
+
+//   bin2Dec = (bin) => {
+//   let decimal= 0;
+//   for (var index=bin.length-1; index >=0; index--) {
+//     decimal += parseInt(bin[index])*Math.pow(2, bin.length-1-index);
+//   }
+//   return decimal;
+// }
 
   render() {
+    const { decimal, inputString } = this.state;
     return (
       <fragment>
       <h1>Binary to Decimal convertor</h1>
-      <NumberInput bin={this.bin} />
+      <NumberInput InputChange={this.onInputChange} />
       <button>Submit</button>
-      <Output/>
+      <Output string={inputString}/>
       </fragment>
       );
   }

@@ -1,12 +1,11 @@
 import React from 'react';
 
-const NumberInput = (bin) => {
+const NumberInput = ({ inputChange }) => {
 	return (
 			<fragment>
-			<input type='number' onChange={() => bin}></input>
+			<input type='search' onChange={inputChange}></input>
 			</fragment>
 		)
-
 }
 
 export default NumberInput;

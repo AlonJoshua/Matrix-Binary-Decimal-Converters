@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Output = (bin) => {
+const Output = ({ inputString }) => {
 	return (
 			<fragment>
-			<h2>The result</h2>
+			<h2>{inputString}</h2>
 			</fragment>
 		)
 
