@@ -2,9 +2,9 @@ import React from 'react';
 
 const Output = ({ inputString }) => {
 	return (
-			<fragment>
+			<div>
 			<h2>{inputString}</h2>
-			</fragment>
+			</div>
 		)
 
 }

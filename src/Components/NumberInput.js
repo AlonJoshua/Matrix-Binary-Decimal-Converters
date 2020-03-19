@@ -2,9 +2,12 @@ import React from 'react';
 
 const NumberInput = ({ inputChange }) => {
 	return (
-			<fragment>
-			<input type='search' onChange={inputChange}></input>
-			</fragment>
+			<div>
+			<input
+			 id='input-number'
+			 type='number' 
+			 onChange={inputChange}></input>
+			</div>
 		)
 }
 
