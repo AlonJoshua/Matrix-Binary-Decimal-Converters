@@ -12,14 +12,19 @@ class App extends Component {
     }
   }
 
+  handleKeyDown = (event) => {
+    const keyCode = event.keyCode || event.which
+    if (keyCode >= 50 && keyCode <= 57) {
+      event.preventDefault()
+    }
+  }
+
   onInputChange = (event) => {
     let inputNumber = event.target.value;
-    let stringLength = inputNumber.length;
     let history;
     for (let number of inputNumber) {
-      if (number !== '1' && number !== '0') {
-        stringLength = stringLength -1;
-      // inputNumber.replace(number, '');
+      if (number !== Number) {
+      
     } else {
       this.bin2Dec(inputNumber);
     }
@@ -31,7 +36,7 @@ class App extends Component {
   for (var index=bin.length-1; index >=0; index--) {
     decimal += parseInt(bin[index])*Math.pow(2, bin.length-1-index);
   }
-  console.log(decimal);
+  this.setState({decimal: decimal});
   // return this.setState({decimal : decimal});
 }
 
@@ -40,7 +45,10 @@ class App extends Component {
     return (
       <Fragment>
       <h1>Binary to Decimal convertor</h1>
-      <NumberInput inputChange={this.onInputChange} />
+      <NumberInput 
+      inputChange={this.onInputChange}
+      handleKeyDown={this.handleKeyDown}
+       />
       <button>Submit</button>
       <Output string={inputString}/>
       </Fragment>

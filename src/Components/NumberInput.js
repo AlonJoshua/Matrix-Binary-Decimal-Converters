@@ -1,12 +1,16 @@
 import React from 'react';
 
-const NumberInput = ({ inputChange }) => {
+const NumberInput = ({ inputChange, handleKeyDown }) => {
 	return (
 			<div>
 			<input
 			 id='input-number'
-			 type='number' 
-			 onChange={inputChange}></input>
+			 type='text'
+			 onChange={inputChange}
+			 onKeyDown={handleKeyDown}
+			 >
+			 </input>
+
 			</div>
 		)
 }
