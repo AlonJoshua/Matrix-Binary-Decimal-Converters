@@ -8,28 +8,22 @@ class App extends Component {
     super()
     this.state = {
       decimal: 0,
-      inputString: ''
-    }
-  }
-
-  handleKeyDown = (event) => {
-    const keyCode = event.keyCode || event.which
-    if (keyCode >= 50 && keyCode <= 57) {
-      event.preventDefault()
     }
   }
 
   onInputChange = (event) => {
-    let inputNumber = event.target.value;
-    let history;
-    for (let number of inputNumber) {
-      if (number !== Number) {
-      
-    } else {
-      this.bin2Dec(inputNumber);
+    let eventString = event.target.value;
+    let validArray = eventString.split('');
+    let lastValidInput='';
+    // Allow only binary digits in the input
+    for (let i=0; i < eventString.length; i++) {
+      if (validArray[i] !== '0' && validArray[i] !== '1') {
+        validArray.splice(i, 1);
+        event.target.value = validArray.join('');
+      } 
     }
-   }
-  }
+    return this.bin2Dec(validArray.join(''));
+}
 
   bin2Dec = (bin) => {
   let decimal= 0;
@@ -37,20 +31,18 @@ class App extends Component {
     decimal += parseInt(bin[index])*Math.pow(2, bin.length-1-index);
   }
   this.setState({decimal: decimal});
-  // return this.setState({decimal : decimal});
 }
 
   render() {
-    const { decimal, inputString } = this.state;
+    const { decimal } = this.state;
     return (
       <Fragment>
       <h1>Binary to Decimal convertor</h1>
       <NumberInput 
       inputChange={this.onInputChange}
-      handleKeyDown={this.handleKeyDown}
        />
       <button>Submit</button>
-      <Output string={inputString}/>
+      <Output decimal={decimal}/>
       </Fragment>
       );
   }

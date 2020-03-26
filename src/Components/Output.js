@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Output = ({ inputString }) => {
+const Output = ({ decimal }) => {
+	console.log(decimal);
 	return (
 			<div>
-			<h2>{inputString}</h2>
+			<h2>{decimal}</h2>
 			</div>
 		)
-
 }
 
 export default Output;
