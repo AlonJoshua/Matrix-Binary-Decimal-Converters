@@ -1,13 +1,13 @@
 import React from 'react';
 
-const NumberInput = ({ inputChange, handleKeyDown }) => {
+const NumberInput = ({ inputChange }) => {
 	return (
-			<div>
+			<div id='binary-input'>
 			<input
 			 id='input-number'
 			 type='text'
+			 placeholder='binary only'
 			 onChange={inputChange}
-			 onKeyDown={handleKeyDown}
 			 >
 			 </input>
 

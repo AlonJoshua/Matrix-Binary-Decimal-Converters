@@ -1,0 +1,21 @@
+#main-title {
+	margin: auto;
+	padding: 10px;
+	text-align: center;
+}
+
+#binary-input {
+	margin: auto;
+	padding-top: 10px;
+	text-align: center;
+}
+
+input {
+	text-align: center;
+}
+
+#output-view {
+	margin: auto;
+	text-align: center;
+	font-family: 'Andale Mono', 'monospace';;
+}

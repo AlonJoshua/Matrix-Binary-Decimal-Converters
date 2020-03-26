@@ -37,11 +37,10 @@ class App extends Component {
     const { decimal } = this.state;
     return (
       <Fragment>
-      <h1>Binary to Decimal convertor</h1>
+      <h1 id='main-title'>Binary - Decimal convertor</h1>
       <NumberInput 
       inputChange={this.onInputChange}
        />
-      <button>Submit</button>
       <Output decimal={decimal}/>
       </Fragment>
       );
