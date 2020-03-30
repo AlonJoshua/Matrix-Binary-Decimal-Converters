@@ -12,9 +12,9 @@ class App extends Component {
   }
 
   onInputChange = (event) => {
+    console.log('event: ', event);
     let eventString = event.target.value;
     let validArray = eventString.split('');
-    let lastValidInput='';
     // Allow only binary digits in the input
     for (let i=0; i < eventString.length; i++) {
       if (validArray[i] !== '0' && validArray[i] !== '1') {
@@ -32,6 +32,7 @@ class App extends Component {
   }
   this.setState({decimal: decimal});
 }
+  
 
   render() {
     const { decimal } = this.state;
@@ -41,6 +42,18 @@ class App extends Component {
       <NumberInput 
       inputChange={this.onInputChange}
        />
+      <div id='reset-div'>
+      <button
+      type='reset'
+      value='Reset'
+      id='reset-btn'
+      onClick={() => {
+        this.onInputChange({target: {value: '0'}})
+      }}
+      >
+      Reset
+      </button>
+      </div>
       <Output decimal={decimal}/>
       </Fragment>
       );

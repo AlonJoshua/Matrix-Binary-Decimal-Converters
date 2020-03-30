@@ -7,6 +7,7 @@ const NumberInput = ({ inputChange }) => {
 			 id='input-number'
 			 type='text'
 			 placeholder='binary only'
+			 
 			 onChange={inputChange}
 			 >
 			 </input>
