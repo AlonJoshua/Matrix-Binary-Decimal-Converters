@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import Output from './Components/Output';
 import NumberInput from './Components/NumberInput';
+import Canvas from './Components/Canvas';
 import './App.css';
 
 class App extends Component {
@@ -38,7 +39,13 @@ class App extends Component {
     const { decimal } = this.state;
     return (
       <Fragment>
-      <h1 id='main-title'>Binary - Decimal convertor</h1>
+      <Canvas />
+      <h1 
+      id='main-title'
+      style={{color: 'white'}}
+      >
+      Binary - Decimal convertor
+      </h1>
       <NumberInput 
       inputChange={this.onInputChange}
        />
