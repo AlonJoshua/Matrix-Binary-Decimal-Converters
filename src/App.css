@@ -1,7 +1,10 @@
+
+
 #main-title {
 	margin: auto;
 	padding: 10px;
 	text-align: center;
+	font-family: 'Orbitron', sans-serif;
 }
 
 #binary-input {
@@ -13,6 +16,7 @@
 #reset-div {
 	text-align: center;
 	padding: 10px;
+	font-family: 'Orbitron', sans-serif;
 }
 
 input {

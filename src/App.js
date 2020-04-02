@@ -54,6 +54,7 @@ class App extends Component {
       type='reset'
       value='Reset'
       id='reset-btn'
+      style={{fontFamily: 'Orbitron'}}
       onClick={() => {
         this.onInputChange({target: {value: '0'}})
       }}
