@@ -1,19 +1,31 @@
 import React, { Component, Fragment } from 'react';
-import Output from './Components/Output';
-import NumberInput from './Components/NumberInput';
+import BinaryInput from './Components/BinaryInput';
+import DecimalInput from './Components/DecimalInput';
 import Canvas from './Components/Canvas';
 import './App.css';
 
 class App extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       decimal: 0,
+      binary: 0
     }
   }
 
-  onInputChange = (event) => {
-    console.log('event: ', event);
+  resetBinaryInput= (event) => {
+    let input = document.getElementById('bin-number');
+    input.value = event.target.value;
+    this.setState({decimal: input.value})
+  }
+
+  resetDecimalInput= (event) => {
+    let input = document.getElementById('dec-number');
+    input.value = event.target.value;
+    this.setState({binary: input.value})
+  }
+
+  onBinInputChange = (event) => {
     let eventString = event.target.value;
     let validArray = eventString.split('');
     // Allow only binary digits in the input
@@ -34,9 +46,7 @@ class App extends Component {
   this.setState({decimal: decimal});
 }
   
-
   render() {
-    const { decimal } = this.state;
     return (
       <Fragment>
       <Canvas />
@@ -44,25 +54,24 @@ class App extends Component {
       id='main-title'
       style={{color: 'white'}}
       >
-      Binary - Decimal convertor
+      Binary - Decimal convertors
       </h1>
-      <NumberInput 
-      inputChange={this.onInputChange}
+      <div id='convertors-container'>
+      <BinaryInput 
+      onBinInputChange={this.onBinInputChange}
+      resetBinaryInput={this.resetBinaryInput}
+      decimal={this.state.decimal}
        />
-      <div id='reset-div'>
-      <button
-      type='reset'
-      value='Reset'
-      id='reset-btn'
-      style={{fontFamily: 'Orbitron'}}
-      onClick={() => {
-        this.onInputChange({target: {value: '0'}})
-      }}
-      >
-      Reset
-      </button>
+      }
+      }
+      <DecimalInput 
+      onBinInputChange={this.onBinInputChange}
+      resetDecimalInput={this.resetDecimalInput}
+      binary={this.state.binary}
+      />
       </div>
-      <Output decimal={decimal}/>
+      <div id='reset-div'>
+      </div>
       </Fragment>
       );
   }

@@ -7,23 +7,32 @@
 	font-family: 'Orbitron', sans-serif;
 }
 
-#binary-input {
+#convertors-container {
+	display: flex;
+}
+
+#bin-dec-title, #dec-bin-title {
+	color: white;
+}
+
+#binary-input, #decimal-input {
 	margin: auto;
 	padding-top: 10px;
 	text-align: center;
 }
 
-#reset-div {
+#reset-bin, #reset-dec {
+	display: flex;
 	text-align: center;
-	padding: 10px;
-	font-family: 'Orbitron', sans-serif;
+	margin: 15px auto;
+	font-family: 'Orbitron';
 }
 
 input {
 	text-align: center;
 }
 
-#output-view {
+#bin-output, #decimal-output {
 	margin: auto;
 	text-align: center;
 	font-family: 'Andale Mono', 'monospace';;
