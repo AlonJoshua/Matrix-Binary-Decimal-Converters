@@ -35,15 +35,38 @@ class App extends Component {
         event.target.value = validArray.join('');
       } 
     }
-    return this.bin2Dec(validArray.join(''));
+    // Algorithm for convert binary to decimal
+    let bin = validArray.join('');
+    let decimal= 0;
+     for (let index=bin.length-1; index >=0; index--) {
+    decimal += parseInt(bin[index])*Math.pow(2, bin.length-1-index);
+    }
+     this.setState({decimal: decimal});
 }
 
-  bin2Dec = (bin) => {
-  let decimal= 0;
-  for (var index=bin.length-1; index >=0; index--) {
-    decimal += parseInt(bin[index])*Math.pow(2, bin.length-1-index);
-  }
-  this.setState({decimal: decimal});
+  onDecInputChange = (event) => {
+    let eventString = event.target.value;
+    const regex = /[0-9]/g;
+    let validArray = [];
+    let eventArray = eventString.match(regex);
+    // Allow only Positive value decimals
+    if (eventArray === null) {
+      eventArray = validArray;
+      event.target.value = validArray.join('');
+         } else {
+      validArray = eventArray;
+      event.target.value = eventArray.join('');
+    }
+    // Algorithm for convert decimal to binary
+    let decimal = Number(validArray.join(''));
+    let binary = [];
+    while (decimal > 0) {
+      let rem = decimal % 2;
+      binary.push(rem);
+      decimal = decimal/2;
+    }
+    console.log('binary', binary);
+  this.setState({binary: binary});
 }
   
   render() {
@@ -54,7 +77,7 @@ class App extends Component {
       id='main-title'
       style={{color: 'white'}}
       >
-      Binary - Decimal convertors
+      Binary - Decimal Convertors
       </h1>
       <div id='convertors-container'>
       <BinaryInput 
@@ -65,7 +88,7 @@ class App extends Component {
       }
       }
       <DecimalInput 
-      onBinInputChange={this.onBinInputChange}
+      onDecInputChange={this.onDecInputChange}
       resetDecimalInput={this.resetDecimalInput}
       binary={this.state.binary}
       />

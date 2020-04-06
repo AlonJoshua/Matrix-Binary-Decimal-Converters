@@ -4,7 +4,6 @@ class DecimalInput extends Component {
 	constructor(props) {
 		super(props)
 	}
-
 	render() {
 	return (
 			<div id='decimal-input'>
@@ -13,7 +12,7 @@ class DecimalInput extends Component {
 			 id='dec-number'
 			 type='text'
 			 placeholder='positive numbers'
-			 onChange={this.props.onBinInputChange}
+			 onChange={this.props.onDecInputChange}
 			 >
 			 </input>
 			 <button

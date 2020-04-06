@@ -12,6 +12,7 @@ class Canvas extends Component {
 		mdr.style.top = '0';
 		mdr.style.left = '0';
 		mdr.style.width = '100%';
+		mdr.style.height = '100%';
 
 		const ctx = mdr.getContext('2d');
 		mdr.height = window.innerHeight;
@@ -19,7 +20,7 @@ class Canvas extends Component {
 
 		const binary = '101010';
 
-		const fontSize = 30;
+		const fontSize = 25;
 		const columns = mdr.width/fontSize;
 
 		let drops = [];
