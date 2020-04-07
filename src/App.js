@@ -60,10 +60,17 @@ class App extends Component {
     // Algorithm for convert decimal to binary
     let decimal = Number(validArray.join(''));
     let binary = [];
+    if (event.target.value.length === 0) {
+      console.log('0 is unshifted')
+      binary.push(0);
+    } else {
+      console.log('0 is poped: ')
+      binary.pop();
+    }
     while (decimal > 0) {
       let rem = decimal % 2;
-      binary.push(rem);
-      decimal = decimal/2;
+      binary.unshift(rem);
+      decimal = Math.floor(decimal/2);
     }
     console.log('binary', binary);
   this.setState({binary: binary});
