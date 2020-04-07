@@ -13,16 +13,16 @@ class App extends Component {
     }
   }
 
-  resetBinaryInput= (event) => {
+  resetBinaryInput = (event) => {
     let input = document.getElementById('bin-number');
-    input.value = event.target.value;
-    this.setState({decimal: input.value})
+    this.setState({decimal: event.target.value})
+    input.value = '';
   }
 
   resetDecimalInput= (event) => {
     let input = document.getElementById('dec-number');
-    input.value = event.target.value;
-    this.setState({binary: input.value})
+    this.setState({binary: 0})
+    input.value = '';
   }
 
   onBinInputChange = (event) => {
@@ -60,11 +60,15 @@ class App extends Component {
     // Algorithm for convert decimal to binary
     let decimal = Number(validArray.join(''));
     let binary = [];
-    if (event.target.value.length === 0) {
-      console.log('0 is unshifted')
+    const isZero = (e) => e === '0';
+    if (eventString.length === 0) {
+      console.log('1')
+      binary.push(0);
+    } else if (eventString.split('').every(isZero)) {
+      console.log('2', binary);
       binary.push(0);
     } else {
-      console.log('0 is poped: ')
+      console.log('3: ', eventString.split(''))
       binary.pop();
     }
     while (decimal > 0) {
@@ -72,7 +76,6 @@ class App extends Component {
       binary.unshift(rem);
       decimal = Math.floor(decimal/2);
     }
-    console.log('binary', binary);
   this.setState({binary: binary});
 }
   
