@@ -105,6 +105,12 @@ class App extends Component {
       </div>
       <div id='reset-div'>
       </div>
+      <a id='credit'
+      href='https://github.com/AlonJoshua'
+      target='_blank'
+      >
+        Made by Alon Joshua
+      </a>
       </Fragment>
       );
   }

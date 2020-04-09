@@ -30,7 +30,7 @@ class DecimalInput extends Component {
 			  id='decimal-output'
 			  style={{color: 'white'}}
 			 >
-			 <h2>{this.props.binary}</h2>
+			 <p>{this.props.binary}</p>
 			 </div>
 			</div>
 		)

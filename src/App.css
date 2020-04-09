@@ -9,6 +9,7 @@
 
 #convertors-container {
 	display: flex;
+	height: 500px;
 }
 
 #bin-dec-title, #dec-bin-title {
@@ -16,8 +17,8 @@
 }
 
 #binary-input, #decimal-input {
-	margin: auto;
-	padding-top: 10px;
+	align-self: baseline;
+	margin: 0 auto;
 	text-align: center;
 }
 
@@ -33,7 +34,23 @@ input {
 }
 
 #bin-output, #decimal-output {
+	max-width: 170px;
 	margin: auto;
 	text-align: center;
 	font-family: 'Andale Mono', 'monospace';;
+}
+
+p {
+	font-size: 1.5em;
+	word-break: break-all;
+}
+
+#credit {
+	display: block;
+	text-decoration-line: none;
+	font-family: 'Orbitron', sans-serif;
+	color: white;
+	margin: 80px auto 10px auto;
+	text-align: center;
+	font-size: 1.2em;
 }

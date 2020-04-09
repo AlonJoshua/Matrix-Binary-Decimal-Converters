@@ -29,7 +29,7 @@ class BinaryInput extends Component {
 			  id='bin-output'
 			  style={{color: 'white'}}
 			 >
-			 <h2>{this.props.decimal}</h2>
+			 <p>{this.props.decimal}</p>
 			 </div>
 			 </div>
 		)
