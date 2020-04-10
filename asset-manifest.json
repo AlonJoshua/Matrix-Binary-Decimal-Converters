@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Matrix-Binary-Decimal-Converters/static/css/main.5f6738f5.chunk.css",
+    "main.js": "/Matrix-Binary-Decimal-Converters/static/js/main.ad99c52b.chunk.js",
+    "main.js.map": "/Matrix-Binary-Decimal-Converters/static/js/main.ad99c52b.chunk.js.map",
+    "runtime-main.js": "/Matrix-Binary-Decimal-Converters/static/js/runtime-main.ffec76c0.js",
+    "runtime-main.js.map": "/Matrix-Binary-Decimal-Converters/static/js/runtime-main.ffec76c0.js.map",
+    "static/js/2.5d4a8d98.chunk.js": "/Matrix-Binary-Decimal-Converters/static/js/2.5d4a8d98.chunk.js",
+    "static/js/2.5d4a8d98.chunk.js.map": "/Matrix-Binary-Decimal-Converters/static/js/2.5d4a8d98.chunk.js.map",
+    "index.html": "/Matrix-Binary-Decimal-Converters/index.html",
+    "precache-manifest.258d11d8882975a016bef68b09cbc00d.js": "/Matrix-Binary-Decimal-Converters/precache-manifest.258d11d8882975a016bef68b09cbc00d.js",
+    "service-worker.js": "/Matrix-Binary-Decimal-Converters/service-worker.js",
+    "static/css/main.5f6738f5.chunk.css.map": "/Matrix-Binary-Decimal-Converters/static/css/main.5f6738f5.chunk.css.map",
+    "static/js/2.5d4a8d98.chunk.js.LICENSE.txt": "/Matrix-Binary-Decimal-Converters/static/js/2.5d4a8d98.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ffec76c0.js",
+    "static/js/2.5d4a8d98.chunk.js",
+    "static/css/main.5f6738f5.chunk.css",
+    "static/js/main.ad99c52b.chunk.js"
+  ]
+}
