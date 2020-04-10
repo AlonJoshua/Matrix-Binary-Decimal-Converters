@@ -1,6 +1,6 @@
 # Matrix Binary Decimal Converters
 
-An idea for project from florinpop17/app-ideas for code practice and understanding of the binary systems, algorithms, canvas & react.
+A project for code practice and understanding of the binary systems, algorithms, canvas & react. The idea came from florinpop17/app-ideas.
 
 ## Getting Started
 
